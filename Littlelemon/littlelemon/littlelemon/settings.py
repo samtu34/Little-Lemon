@@ -37,8 +37,27 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework.authtoken', 
     'restaurant',
-]
+    'rest_framework',
+    'djoser',
+    ]
+
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication', #autheticatin classes fo user registration 
+        'rest_framework.authentication.SessionAuthentication',
+        # Add other authentication classes if needed
+    ],
+    
+    # other rest_framework settings...
+}
+
+
+#add the following line
+DJOSER={"USER_ID_FIELD":"username"}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
